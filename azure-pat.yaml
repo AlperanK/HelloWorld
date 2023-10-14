@@ -1,0 +1,10 @@
+apiVersion: v1
+data:
+  AZP_TOKEN: dXBnejV2eGtrZmNmb2VpNGRwbHIzazNkdHY0bTZ3dW53ZGt5NHdjbXhnM3ZiZzV4amg3YQo=
+kind: Secret
+metadata:
+  name: azure-devops-pat
+  namespace: default
+  resourceVersion: "1093"
+  uid: c84161f4-2a63-4588-9b36-bab3e8599b38
+type: Opaque
