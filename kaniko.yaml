@@ -9,7 +9,7 @@ spec:
     args:
     - "--dockerfile=Dockerfile"
     - "--context=git://github.com/AlperanK/HelloWorld.git"
-    - "--destination=alperanfk/helloworldagent:0.0.3"
+    - "--destination=alperanfk/helloworldagent:0.0.2"
     volumeMounts:
     - name: kaniko-secret
       mountPath: /kaniko/.docker
