@@ -1,0 +1,23 @@
+trigger:
+- main
+
+pool:
+  name: 'AFK'
+
+
+stages:
+- stage: BuildAndPushImage
+  jobs:
+  - job: BuildAndPushImage
+    steps:
+    - checkout: self  # Checks out the code from your repository
+
+    - task: Kubernetes@1
+      inputs:
+        connectionType: 'Kubernetes Service Connection'
+        kubernetesServiceEndpoint: 'rancherk8s'
+        namespace: 'default'
+        command: 'apply'
+        arguments: '-f kaniko.yaml'
+        secretType: 'dockerRegistry'
+        containerRegistryType: 'Azure Container Registry'
