@@ -15,5 +15,12 @@ spec:
       containers:
       - name: nginx
         image: nginx:latest  # Use the Nginx official Docker image
+        volumeMounts:
+        - name: custom-html-volume
+          mountPath: /usr/share/nginx/html
         ports:
         - containerPort: 80  # Port on which Nginx listens
+      volumes:
+      - name: custom-html-volume
+        hostPath:
+          path: /Users/AFK/Desktop/DevOps/HelloWorld/argodep/index.html
